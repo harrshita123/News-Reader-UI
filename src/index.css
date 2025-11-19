@@ -1,3 +1,4 @@
+
 #title {
   margin-top: 0;
 }
@@ -6,3 +7,56 @@
   margin-top: 50px;
 }
 
+
+#mail{
+  background-color: #2D5FFF;
+  color: white;
+  border-radius: 10px;
+  padding: 10px 20px;
+  width: 300px;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+  margin-top: 30px;
+}
+#google{
+  border-radius: 10px;
+  padding: 10px 20px;
+  width: 300px;
+  font-size: 16px;
+  margin-bottom: 30px;
+  border: none;
+  cursor: pointer;
+}
+.line-or {
+  display: flex;
+  align-items: center;
+  text-align: center;
+  color: #555;
+  font-weight: 500;
+}
+
+.line-or::before,
+.line-or::after {
+  content: "";
+  flex: 1;
+  border-bottom: 1px solid #ccc;
+}
+
+.line-or::before {
+  margin-right: 10px;
+}
+
+.line-or::after {
+  margin-left: 10px;
+}
+.auth-container {
+padding: 100px;
+}
+
+#google-logo{
+  height: 20px;
+  width: 20px;
+  margin-right: 10px;
+  vertical-align: middle;
+}

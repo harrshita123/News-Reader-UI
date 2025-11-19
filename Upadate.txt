@@ -1,0 +1,7 @@
+Date: 19-Nov-2025
+Contributors: Manav Nayak, Harshita Yadav
+Update:
+- Harshita implemented the Header and Footer components for the login form, including layout and styling.
+- Manav added authentication buttons to the login form: "Continue with Google" and "Continue with Email".
+- Components were integrated into App.jsx with proper ordering: Header → Auth → Footer.
+- Basic styling applied to buttons; layout tested on desktop and mobile breakpoints.

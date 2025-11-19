@@ -8,8 +8,8 @@ function App() {
   
   return (
     <>
-    <Auth />
     <Header/>
+    <Auth />
     <Footer/>
 
     </>

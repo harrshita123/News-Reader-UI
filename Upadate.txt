@@ -5,3 +5,12 @@ Update:
 - Manav added authentication buttons to the login form: "Continue with Google" and "Continue with Email".
 - Components were integrated into App.jsx with proper ordering: Header → Auth → Footer.
 - Basic styling applied to buttons; layout tested on desktop and mobile breakpoints.
+
+
+Date: 20-Nov-2025
+Contributors: Harshita Yadav , Manav Nayak
+Update:
+- Harshita learned about the basic of node.js and setup.
+- Read about GTM.
+- Manav done the changes in login page and implement signup page.
+- Reasearch about how we implement backend in our project.

@@ -14,3 +14,10 @@ Update:
 - Read about GTM.
 - Manav done the changes in login page and implement signup page.
 - Reasearch about how we implement backend in our project.
+
+
+Date: 20-Nov-2025
+Contributors: Harshita Yadav , Manav Nayak
+Update: 
+- Harshita research about the password hashing .
+- manav research about how API works in our project. 

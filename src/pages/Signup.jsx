@@ -15,7 +15,7 @@ export default function Signup() {
       </div>
       <h3 className="log-text">
   Already have an account?{" "}
-  <Link to="/" className="text-blue-600 underline">
+  <Link to="/" id="log-link">
     Login
   </Link>
 </h3>

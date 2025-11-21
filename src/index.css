@@ -72,3 +72,9 @@ margin: 30px;
   margin-top: 20px;
   font-size: 16px;
 }
+
+#log-link, #sign-link {
+  color: #2D5FFF;
+  text-decoration: none;
+  font-weight: bold;
+}

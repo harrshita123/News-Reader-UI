@@ -16,7 +16,7 @@ Update:
 - Reasearch about how we implement backend in our project.
 
 
-Date: 20-Nov-2025
+Date: 21-Nov-2025
 Contributors: Harshita Yadav , Manav Nayak
 Update: 
 - Harshita research about the password hashing .

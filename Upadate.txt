@@ -10,14 +10,21 @@ Update:
 Date: 20-Nov-2025
 Contributors: Harshita Yadav , Manav Nayak
 Update:
-- Harshita learned about the basic of node.js and setup.
-- Read about GTM.
-- Manav done the changes in login page and implement signup page.
-- Reasearch about how we implement backend in our project.
-
+- Harshita learned the basics of Node.js and completed the initial setup.
+- Read and understood the fundamentals of Google Tag Manager (GTM).
+- Manav completed the required changes on the login page and implemented the signup page.
+- learned the basics of Node.js and completed the initial setup.
+- Conducted research on how to implement the backend for our project, including technologies, structure, and integration approaches. 
 
 Date: 21-Nov-2025
 Contributors: Harshita Yadav , Manav Nayak
 Update: 
 - Harshita research about the password hashing .
 - manav research about how API works in our project. 
+
+
+Date: 21-Nov-2025
+Contributors: Harshita Yadav , Manav Nayak
+Update:
+- Harshita worked on password hashing and also explored Node.js and the MongoDB database, including how to install and set them up.
+- Manav completed the fetch API task and continued researching how the backend will function in the project.

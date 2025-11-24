@@ -37,3 +37,9 @@ Update:
 - we learned about how Google Authorization Works in backend .
 - learn about how the data is stored in MongoDB .
 - we both are implementing backend in our project .
+
+
+Date: 24-Nov-2025
+Contributors: Harshita Yadav , Manav Nayak
+Update:
+- Today we handle the error of backend.

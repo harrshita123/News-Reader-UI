@@ -43,3 +43,10 @@ Date: 24-Nov-2025
 Contributors: Harshita Yadav , Manav Nayak
 Update:
 - Today we handle the error of backend.
+
+
+Date: 25-Nov-2025
+Contributors: Harshita Yadav , Manav Nayak
+Update:
+- we build UI of project .
+- working with API Itegration .

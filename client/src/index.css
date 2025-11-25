@@ -1,0 +1,80 @@
+
+#title {
+  margin-top: 0;
+  font-size: 48px;
+  text-align: center;
+}
+
+#subtitle {
+  margin-top: 10px;
+  font-size: 24px;
+  text-align: center;
+  color: rgba(33, 33, 33, 0.818);
+}
+
+#logo {
+  margin-top: 50px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#log{
+  font-size: 24px;
+  margin-bottom: 20px;
+  color: rgba(33, 33, 33, 0.818);
+  text-align: center;
+}
+
+#mail, #pass{
+  display: block;
+  margin: 20px auto;
+  padding: 10px;
+  width: 300px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+#login, #sign{
+  background-color: #2D5FFF;
+  color: white;
+  border-radius: 10px;
+  padding: 10px 20px;
+  width: 300px;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+  margin-top: 30px;
+}
+
+
+.login-container {
+padding: 10px;
+text-align: center;
+margin: 30px;
+}
+
+.signup-container {
+  padding: 10px;
+  text-align: center;
+  margin: 30px;
+}
+
+.signup-text {
+  text-align: center;
+  margin-top: 20px;
+  font-size: 16px;
+}
+
+.log-text {
+  text-align: center;
+  margin-top: 20px;
+  font-size: 16px;
+}
+
+#log-link, #sign-link {
+  color: #2D5FFF;
+  text-decoration: none;
+  font-weight: bold;
+}

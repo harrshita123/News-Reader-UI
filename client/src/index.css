@@ -1,4 +1,6 @@
-
+*{
+  margin:0;
+}
 #title {
   margin-top: 0;
   font-size: 48px;
@@ -77,4 +79,103 @@ margin: 30px;
   color: #2D5FFF;
   text-decoration: none;
   font-weight: bold;
+}
+
+
+.navbar {
+    background-color: #092138;      
+    padding: 10px 20px ;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    display: flex;
+    align-items: center;
+    gap: 6px;   /* reduces space between logo & NewsReader */
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+    font-size: 24px;
+    font-weight: bold;
+     margin: 0;   
+}
+
+.logo-img {
+  width: 20px;
+  height: 20px;
+  margin: 0;  
+}
+
+ .icons span {          /*write span here to make specific and because of gap b/w both */ 
+    margin-left: 30px;
+    font-size: 30px;
+    cursor: pointer;
+}
+
+
+.search-container {
+    padding: 15px;
+    background: #092138;
+}
+
+
+.search-box {
+    width: 100%;
+    max-width: 800px;
+    background: rgba(255, 255, 255, 0.08);
+    padding: 10px 20px;
+    border-radius: 40px;   
+    display: flex;
+    align-items: center;
+    border: 1px solid rgba(255, 255, 255, 0.204);
+    margin: auto;
+}
+
+.search-icon {
+    font-size: 20px;
+    margin-right: 10px;  /* gap between icon and text*/
+}
+
+.search-box input {
+    background: transparent; /* in place of white it transparent*/
+    border: none;
+     outline: none;  /*when we search it remove the border or lines */
+    width: 100%;     /* when we search it text go at end point */
+    font-size: 16px;
+    color: #d0d0d0;
+}
+
+.search-box input::placeholder {  /* search news.. text color*/
+    color: #d0d0d0;
+}
+
+.tabs {
+    display: flex; /* put the item in same row*/
+    gap: 15px;
+    padding: 15px 20px;
+}
+
+.tab {
+    padding: 8px 15px;
+    border-radius: 20px;
+    border: none;
+    background-color: #e4e7eb;
+    font-size: 14px;
+}
+
+
+.card-container {
+    display: flex;
+    gap: 20px;
+    padding: 20px;
+}
+
+.card {
+    background-color: white;
+    width: 32%;
+    border-radius: 12px;
+    padding-bottom: 10px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
 }

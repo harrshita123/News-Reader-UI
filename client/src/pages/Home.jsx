@@ -1,23 +1,23 @@
 import React from "react";
-
+import { FaSearch, FaBookmark, FaUser } from "react-icons/fa";
 export default function Home() {
   return (
     <>
       <div className="home">
         <header className="navbar">
-        <img src="client/src/assets/logo.png" alt="Logo" className="logo-img" /> 
-        <h1 className="logo">NextRead...</h1>
+        <img src="src/assets/logo.png" alt="Logo" className="logo-img" /> 
+        <h1 className="logo">NextRead</h1>
 
         <div className="icons">
-        <span className="bookmark">🔖</span>
-        <span className="user">👤</span>
+        <FaBookmark size={24} />
+        <FaUser size={24} />
         </div>
     </header>
       </div>
 
       <div className="search-container">
       <div className="search-box">
-          <span className="search-icon">🔍</span>
+           <FaSearch size={18} color="white"/>
           <input type="text" id="placeholder-text-color"placeholder="Search news..." />
         </div>
     </div>
@@ -44,13 +44,13 @@ export default function Home() {
         </div>
 
             <div className="card">
-            <img src="images/cricket.jpg" alt="Cricket" />
+            <img src="" alt="Cricket" />
             <h3>India Wins Cricket Series Against Australia in Thrilling Final Match</h3>
             <p>Team India secured a historic victory in the final match with outstanding...</p>
         </div>
 
         <div className="card">
-            <img src="images/stock.jpg" alt="Stock Market" />
+            <img src="" alt="Stock Market" />
             <h3>Stock Market Reaches All-Time High Amid Economic Recovery</h3>
             <p>Major indices hit record levels as investor confidence grows with positive...</p>
         </div>

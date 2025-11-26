@@ -5,21 +5,20 @@ export default function Home() {
     <>
       <div className="home">
         <header className="navbar">
+        <div className="logo"> 
         <img src="src/assets/logo.png" alt="Logo" className="logo-img" /> 
-        <h1 className="logo">NextRead</h1>
+        <h1 className="logo-heading">NextRead</h1>
+        </div> 
+        <div className="search-box">
+            <FaSearch size={18} color="white"/>
+            <input type="text" id="placeholder-text-color"placeholder="Search news..." />
+        </div>
 
         <div className="icons">
-        <FaBookmark size={24} />
-        <FaUser size={24} />
+          <FaBookmark size={24} id="bookmark"/>
+          <FaUser size={24} id="user"/>
         </div>
     </header>
-      </div>
-
-      <div className="search-container">
-      <div className="search-box">
-           <FaSearch size={18} color="white"/>
-          <input type="text" id="placeholder-text-color"placeholder="Search news..." />
-        </div>
     </div>
 
     <div class="tabs">
@@ -54,8 +53,13 @@ export default function Home() {
             <h3>Stock Market Reaches All-Time High Amid Economic Recovery</h3>
             <p>Major indices hit record levels as investor confidence grows with positive...</p>
         </div>
-    </div>
 
+    <div className="card">
+            <img src="" alt="Stock Market" />
+            <h3>Stock Market Reaches All-Time High Amid Economic Recovery</h3>
+            <p>Major indices hit record levels as investor confidence grows with positive...</p>
+        </div>
+    </div>
     </>
   );
 }

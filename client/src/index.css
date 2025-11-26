@@ -84,7 +84,8 @@ margin: 30px;
 
 .navbar {
     background-color: #092138;      
-    padding: 10px 20px ;
+    padding: 5px 20px ;
+    height: 70px;
     color: white;
     display: flex;
     justify-content: space-between;
@@ -95,17 +96,22 @@ margin: 30px;
 }
 
 .logo {
-    font-size: 24px;
+  display:flex;
+}
+
+.logo-heading {
     font-weight: bold;
-    font-size: 24px;
+    font-size: 36px;
     font-weight: bold;
-     margin: 0;   
+    margin-left: 10px;
+    margin-top: 3.5px;
 }
 
 .logo-img {
-  width: 20px;
-  height: 20px;
-  margin: 0;  
+  width: 45px;
+  height: 45px;
+  margin-top: 1px; 
+  border-radius: 8px; 
 }
 
  .icons span {          /*write span here to make specific and because of gap b/w both */ 
@@ -141,7 +147,7 @@ margin: 30px;
 .search-box input {
     background: transparent; /* in place of white it transparent*/
     border: none;
-     outline: none;  /*when we search it remove the border or lines */
+    outline: none;  /*when we search it remove the border or lines */
     width: 100%;     /* when we search it text go at end point */
     font-size: 16px;
     color: #d0d0d0;
@@ -149,6 +155,7 @@ margin: 30px;
 
 .search-box input::placeholder {  /* search news.. text color*/
     color: #d0d0d0;
+    padding-left: 15px;
 }
 
 .tabs {
@@ -167,15 +174,43 @@ margin: 30px;
 
 
 .card-container {
-    display: flex;
     gap: 20px;
     padding: 20px;
+    display:grid;
+    grid-template-columns: repeat(2,1fr);
 }
 
 .card {
     background-color: white;
-    width: 32%;
+    width: 700px;
+    height: 250px;
     border-radius: 12px;
     padding-bottom: 10px;
-    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+  
 }
+.icons {
+  margin-top:5px;
+}
+
+#bookmark {
+  margin-right: 40px;
+}
+
+
+#user {
+  margin-right: 10px;
+}
+
+
+
+@media ( 440 <=width<= 768px) {
+
+  .navbar {
+    flex-wrap: wrap;
+    text-align: center;
+  }
+}
+
+
+

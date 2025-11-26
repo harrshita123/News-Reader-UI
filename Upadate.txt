@@ -50,3 +50,10 @@ Contributors: Harshita Yadav , Manav Nayak
 Update:
 - we build UI of project .
 - working with API Itegration .
+
+
+Date: 26-Nov-2025
+Contributors: Harshita Yadav , Manav Nayak
+Update:
+- Learn about API Itegration.
+- we are updated in UI.

@@ -1,5 +1,7 @@
 *{
   margin:0;
+  padding: 0;
+  box-sizing: border-box;
 }
 #title {
   margin-top: 0;
@@ -39,7 +41,7 @@
 }
 
 #login, #sign{
-  background-color: #2D5FFF;
+  /* background-color: #2D5FFF; */
   color: white;
   border-radius: 10px;
   padding: 10px 20px;
@@ -76,13 +78,14 @@ margin: 30px;
 }
 
 #log-link, #sign-link {
-  color: #2D5FFF;
+  /* color: #2D5FFF; */
   text-decoration: none;
   font-weight: bold;
 }
 
 
 .navbar {
+  /* width: 100% ; */
     background-color: #092138;      
     padding: 5px 20px ;
     height: 70px;
@@ -97,6 +100,9 @@ margin: 30px;
 
 .logo {
   display:flex;
+  align-items: center;
+  gap: 10px;
+  flex: 0 0 auto;  /* prevent shrinking of logo */
 }
 
 .logo-heading {
@@ -105,6 +111,7 @@ margin: 30px;
     font-weight: bold;
     margin-left: 10px;
     margin-top: 3.5px;
+    color: white;
 }
 
 .logo-img {
@@ -114,19 +121,24 @@ margin: 30px;
   border-radius: 8px; 
 }
 
- .icons span {          /*write span here to make specific and because of gap b/w both */ 
+ .icons {          
     margin-left: 30px;
     font-size: 30px;
     cursor: pointer;
+    gap: 12px;
+    flex: 0 0 auto;  /* prevent shrinking of icons */
 }
 
+.icons span {  /* write span here to make specific and because of gap b/w both */ 
+  margin-left: 30px;
+  font-size: 30px;
+  cursor: pointer;
+}
 
 .search-container {
     padding: 15px;
     background: #092138;
 }
-
-
 .search-box {
     width: 100%;
     max-width: 800px;
@@ -136,12 +148,14 @@ margin: 30px;
     display: flex;
     align-items: center;
     border: 1px solid rgba(255, 255, 255, 0.204);
-    margin: auto;
+    /* margin: 0 12px; */
+    min-width: 0; /* prevent overflow on small screens */
 }
 
 .search-icon {
     font-size: 20px;
     margin-right: 10px;  /* gap between icon and text*/
+    color: #fff;
 }
 
 .search-box input {
@@ -151,6 +165,7 @@ margin: 30px;
     width: 100%;     /* when we search it text go at end point */
     font-size: 16px;
     color: #d0d0d0;
+    min-width: 0; /* important for flex items */
 }
 
 .search-box input::placeholder {  /* search news.. text color*/
@@ -160,6 +175,16 @@ margin: 30px;
 
 .tabs {
     display: flex; /* put the item in same row*/
+    gap: 12px;
+    padding: 12px 20px;
+    overflow-x: auto; /* when tabs exceed width enable horizontal scrolling */
+    scrollbar-width: thin; /* for firefox */
+}
+
+
+
+.tabs {
+    display: flex; 
     gap: 15px;
     padding: 15px 20px;
 }
@@ -170,6 +195,8 @@ margin: 30px;
     border: none;
     background-color: #e4e7eb;
     font-size: 14px;
+    white-space: nowrap; /* prevent text from wrapping to next line */
+    flex: 0 0 auto; /* prevent shrinking of tabs */
 }
 
 
@@ -182,16 +209,25 @@ margin: 30px;
 
 .card {
     background-color: white;
-    width: 700px;
-    height: 250px;
+    width: 100%;
+    height:auto;
     border-radius: 12px;
-    padding-bottom: 10px;
+    padding: 16px;
     box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
   
 }
-.icons {
-  margin-top:5px;
+
+
+.card img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  object-fit: cover;
 }
+
 
 #bookmark {
   margin-right: 40px;
@@ -203,14 +239,118 @@ margin: 30px;
 }
 
 
+#bookmark:hover, #user:hover {
+  color: #8c909a;
+  transition: 0.3s;
+}
 
-@media ( 440 <=width<= 768px) {
 
-  .navbar {
-    flex-wrap: wrap;
-    text-align: center;
+@media (max-width: 1024px) {
+
+  .logo-heading {
+     font-size: 30px;
+     }
+
+
+  .logo-img { 
+    width: 40px; 
+    height: 40px; 
   }
+
+
+  .card-container {
+     grid-template-columns: repeat(2, 1fr); 
+    }
+
 }
 
 
 
+@media (max-width: 768px) {
+  .navbar {
+    height: auto;
+    padding: 10px 14px;
+    gap: 8px;
+    display: flex;
+    flex-direction: row;   /* row with wrapping to allow search to go below */
+    flex-wrap: wrap;
+    align-items: center;
+    align-content: flex-start;
+  }
+
+ 
+  .logo {
+    order: 1;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding-left: 6px;
+    flex: 0 0 auto;
+  }
+
+  .logo-heading {
+    font-size: 26px;
+    margin: 0;
+  }
+
+  .logo-img {
+    width: 36px;
+    height: 36px;
+  }
+
+  /* Icons align to the right of the first row */
+  .icons {
+    order: 2;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    flex: 0 0 auto;
+    margin-left: auto; /* pushes icons to the far right on the row */
+    padding-right: 6px;
+  }
+
+  /* Force search to its own full-width row below */
+  .search-box {
+    order: 3;
+    width: 100%;
+    flex: 1 1 100%;
+    margin: 8px 12px 12px 12px;
+    padding: 8px 12px;
+    max-width: none;
+    background: rgba(255,255,255,0.08);
+    display: flex;
+    align-items: center;
+    border-radius: 40px;
+  }
+
+  .search-box input {
+    font-size: 15px;
+    padding: 6px 4px;
+    min-width: 0;
+    width: 100%;
+  }
+
+  .search-icon {
+    font-size: 18px;
+    margin-right: 8px;
+  }
+
+  .card-container {
+    grid-template-columns: 1fr;
+  }
+
+  .card {
+    padding: 12px;
+  }
+
+  .tabs {
+    padding: 10px 12px;
+    gap: 8px;
+  }
+
+  .tab {
+    padding: 8px 12px;
+    font-size: 13px;
+  }
+
+}

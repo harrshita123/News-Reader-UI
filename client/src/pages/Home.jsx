@@ -21,7 +21,7 @@ export default function Home() {
     </header>
     </div>
 
-    <div class="tabs">
+    <div className="tabs">
         <button className="tab active">All</button>
         <button className="tab">Technology</button>
         <button className="tab">Sports</button>

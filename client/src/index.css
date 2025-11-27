@@ -298,7 +298,6 @@ margin: 30px;
     height: 36px;
   }
 
-  /* Icons align to the right of the first row */
   .icons {
     order: 2;
     display: flex;
@@ -309,7 +308,7 @@ margin: 30px;
     padding-right: 6px;
   }
 
-  /* Force search to its own full-width row below */
+
   .search-box {
     order: 3;
     width: 100%;

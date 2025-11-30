@@ -1,376 +1,407 @@
 *{
   margin:0;
-  padding: 0;
-  box-sizing: border-box;
-}
-#title {
-  margin-top: 0;
-  font-size: 48px;
-  text-align: center;
+  padding:0;
+  box-sizing:border-box;
 }
 
-#subtitle {
-  margin-top: 10px;
-  font-size: 24px;
-  text-align: center;
-  color: rgba(33, 33, 33, 0.818);
+#title{
+  margin-top:0;
+  font-size:48px;
+  text-align:center;
 }
 
-#logo {
-  margin-top: 50px;
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
+#subtitle{
+  margin-top:10px;
+  font-size:24px;
+  text-align:center;
+  color:rgba(33,33,33,0.818);
+}
+
+#logo{
+  margin-top:50px;
+  display:block;
+  margin-left:auto;
+  margin-right:auto;
 }
 
 #log{
-  font-size: 24px;
-  margin-bottom: 20px;
-  color: rgba(33, 33, 33, 0.818);
-  text-align: center;
+  font-size:24px;
+  margin-bottom:20px;
+  color:rgba(33,33,33,0.818);
+  text-align:center;
 }
 
-#mail, #pass{
-  display: block;
-  margin: 20px auto;
-  padding: 10px;
-  width: 300px;
-  font-size: 16px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
+#mail,#pass{
+  display:block;
+  margin:20px auto;
+  padding:10px;
+  width:300px;
+  font-size:16px;
+  border:1px solid #ccc;
+  border-radius:5px;
 }
 
-#login, #sign{
-  /* background-color: #2D5FFF; */
-  color: white;
-  border-radius: 10px;
-  padding: 10px 20px;
-  width: 300px;
-  font-size: 16px;
-  border: none;
-  cursor: pointer;
-  margin-top: 30px;
+#login,#sign{
+  color:white;
+  border-radius:10px;
+  padding:10px 20px;
+  width:300px;
+  font-size:16px;
+  border:none;
+  cursor:pointer;
+  margin-top:30px;
 }
 
-
-.login-container {
-padding: 10px;
-text-align: center;
-margin: 30px;
+.login-container{
+  padding:10px;
+  text-align:center;
+  margin:30px;
 }
 
-.signup-container {
-  padding: 10px;
-  text-align: center;
-  margin: 30px;
+.signup-container{
+  padding:10px;
+  text-align:center;
+  margin:30px;
 }
 
-.signup-text {
-  text-align: center;
-  margin-top: 20px;
-  font-size: 16px;
+.signup-text{
+  text-align:center;
+  margin-top:20px;
+  font-size:16px;
 }
 
-.log-text {
-  text-align: center;
-  margin-top: 20px;
-  font-size: 16px;
+.log-text{
+  text-align:center;
+  margin-top:20px;
+  font-size:16px;
 }
 
-#log-link, #sign-link {
-  /* color: #2D5FFF; */
-  text-decoration: none;
-  font-weight: bold;
+#log-link,#sign-link{
+  text-decoration:none;
+  font-weight:bold;
 }
 
-
-.navbar {
-  /* width: 100% ; */
-    background-color: #092138;      
-    padding: 5px 20px ;
-    height: 80px;
-    color: white;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    display: flex;
-    align-items: center;
-    gap: 6px;   /* reduces space between logo & NewsReader */
-}
-
-.logo {
+.navbar{
+  background-color:#092138;
+  padding:5px 20px;
+  height:80px;
+  color:white;
   display:flex;
-  align-items: center;
-  gap: 10px;
-  flex: 0 0 auto;  /* prevent shrinking of logo */
+  justify-content:space-between;
+  align-items:center;
+  gap:6px;
 }
 
-.logo-heading {
-    font-weight: bold;
-    font-size: 36px;
-    font-weight: bold;
-    margin-left: 10px;
-    margin-top: 3.5px;
-    color: white;
+.logo{
+  display:flex;
+  align-items:center;
+  gap:10px;
+  flex:0 0 auto;
 }
 
-.logo-img {
-  width: 45px;
-  height: 45px;
-  margin-top: 1px; 
-  border-radius: 8px; 
+.logo-heading{
+  font-weight:bold;
+  font-size:36px;
+  margin-left:10px;
+  margin-top:3.5px;
+  color:white;
 }
 
- .icons {          
-    margin-left: 30px;
-    font-size: 30px;
-    cursor: pointer;
-    gap: 10px;
-    flex: 0 0 auto;  /* prevent shrinking of icons */
+.logo-img{
+  width:45px;
+  height:45px;
+  margin-top:1px;
+  border-radius:8px;
 }
 
-.icons span {  /* write span here to make specific and because of gap b/w both */ 
-  margin-left: 30px;
-  font-size: 30px;
-  cursor: pointer;
+.icons{
+  margin-left:30px;
+  font-size:30px;
+  cursor:pointer;
+  gap:10px;
+  flex:0 0 auto;
 }
 
-.search-container {
-    padding: 15px;
-    background: #092138;
-}
-.search-box {
-    width: 100%;
-    max-width: 800px;
-    background: rgba(255, 255, 255, 0.08);
-    padding: 10px 20px;
-    border-radius: 40px;   
-    display: flex;
-    align-items: center;
-    border: 1px solid rgba(255, 255, 255, 0.204);
-    /* margin: 0 12px; */
-    min-width: 0; /* prevent overflow on small screens */
+.icons span{
+  margin-left:30px;
+  font-size:30px;
+  cursor:pointer;
 }
 
-.search-icon {
-    font-size: 20px;
-    margin-right: 10px;  /* gap between icon and text*/
-    color: #fff;
+.search-container{
+  padding:15px;
+  background:#092138;
 }
 
-.search-box input {
-    background: transparent; /* in place of white it transparent*/
-    border: none;
-    outline: none;  /*when we search it remove the border or lines */
-    width: 100%;     /* when we search it text go at end point */
-    font-size: 16px;
-    color: #d0d0d0;
-    min-width: 0; /* important for flex items */
+.search-box{
+  width:100%;
+  max-width:800px;
+  background:rgba(255,255,255,0.08);
+  padding:10px 20px;
+  border-radius:40px;
+  display:flex;
+  align-items:center;
+  border:1px solid rgba(255,255,255,0.204);
+  min-width:0;
 }
 
-.search-box input::placeholder {  /* search news.. text color*/
-    color: #d0d0d0;
-    padding-left: 15px;
+.search-icon{
+  font-size:20px;
+  margin-right:10px;
+  color:#fff;
 }
 
-.tabs {
-    display: flex; /* put the item in same row*/
-    gap: 12px;
-    padding: 12px 20px;
-    overflow-x: auto; /* when tabs exceed width enable horizontal scrolling */
-    scrollbar-width: thin; /* for firefox */
+.search-box input{
+  background:transparent;
+  border:none;
+  outline:none;
+  width:100%;
+  font-size:16px;
+  color:#d0d0d0;
+  min-width:0;
 }
 
-
-
-.tabs {
-    display: flex; 
-    gap: 15px;
-    padding: 15px 20px;
+.search-box input::placeholder{
+  color:#d0d0d0;
+  padding-left:15px;
 }
 
-.tab {
-    padding: 8px 15px;
-    border-radius: 20px;
-    border: none;
-    background-color: #e4e7eb;
-    font-size: 14px;
-    white-space: nowrap; /* prevent text from wrapping to next line */
-    flex: 0 0 auto; /* prevent shrinking of tabs */
+.tabs{
+  display:flex;
+  gap:12px;
+  padding:12px 20px;
+  overflow-x:auto;
+  scrollbar-width:thin;
 }
 
-
-.card-container {
-    gap: 20px;
-    padding: 20px;
-    display:grid;
-    grid-template-columns: repeat(2,1fr);
+.tab{
+  padding:8px 15px;
+  border-radius:20px;
+  border:none;
+  background-color:#e4e7eb;
+  font-size:14px;
+  white-space:nowrap;
+  flex:0 0 auto;
 }
 
-.card {
-    background-color: white;
-    width: 100%;
+.card-container{
+  gap:20px;
+  padding:20px;
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+}
+
+.card{
+  background-color:white;
+  width:100%;
+  border-radius:12px;
+  padding:16px;
+  box-shadow:0 2px 6px rgba(0,0,0,0.3);
+  display:flex;
+  flex-direction:column;
+  gap:8px;
+}
+
+.card img{
+  width:100%;
+  height:auto;
+  border-radius:8px;
+  object-fit:cover;
+}
+
+#bookmark{
+  margin-right:40px;
+}
+
+#user{
+  margin-right:30px;
+}
+
+#bookmark:hover,#user:hover{
+  color:#8c909a;
+  transition:0.3s;
+}
+
+@media(max-width:1024px){
+  .logo-heading{font-size:30px;}
+  .logo-img{width:40px;height:40px;}
+  .card-container{grid-template-columns:repeat(2,1fr);}
+}
+
+@media(max-width:768px){
+  .navbar{
     height:auto;
-    border-radius: 12px;
-    padding: 16px;
-    box-shadow: 0 2px 6px rgba(0,0,0,0.3);
-    display: flex;
-    flex-direction: column;
-    gap: 8px;
-  
-}
-
-
-.card img {
-  width: 100%;
-  height: auto;
-  border-radius: 8px;
-  object-fit: cover;
-}
-
-
-#bookmark {
-  margin-right: 40px;
-}
-
-
-#user {
-  margin-right: 30px;
-}
-
-
-#bookmark:hover, #user:hover {
-  color: #8c909a;
-  transition: 0.3s;
-}
-
-
-
-
-@media (max-width: 1024px) {
-
-  .logo-heading {
-     font-size: 30px;
-     }
-
-
-  .logo-img { 
-    width: 40px; 
-    height: 40px; 
+    padding:10px 14px;
+    gap:8px;
+    display:flex;
+    flex-direction:row;
+    flex-wrap:wrap;
+    align-items:center;
+    align-content:flex-start;
   }
 
-
-  .card-container {
-     grid-template-columns: repeat(2, 1fr); 
-    }
-
-}
-
-
-
-@media (max-width: 768px) {
-  .navbar {
-    height: auto;
-    padding: 10px 14px;
-    gap: 8px;
-    display: flex;
-    flex-direction: row;   /* row with wrapping to allow search to go below */
-    flex-wrap: wrap;
-    align-items: center;
-    align-content: flex-start;
+  .logo{
+    order:1;
+    display:flex;
+    align-items:center;
+    gap:8px;
+    padding-left:6px;
+    flex:0 0 auto;
   }
 
- 
-  .logo {
-    order: 1;
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    padding-left: 6px;
-    flex: 0 0 auto;
+  .logo-heading{
+    font-size:26px;
+    margin:0;
   }
 
-  .logo-heading {
-    font-size: 26px;
-    margin: 0;
+  .logo-img{
+    width:36px;
+    height:36px;
   }
 
-  .logo-img {
-    width: 36px;
-    height: 36px;
+  .icons{
+    order:2;
+    display:flex;
+    align-items:center;
+    gap:12px;
+    flex:0 0 auto;
+    margin-left:auto;
+    padding-right:6px;
   }
 
-  .icons {
-    order: 2;
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    flex: 0 0 auto;
-    margin-left: auto; /* pushes icons to the far right on the row */
-    padding-right: 6px;
+  .search-box{
+    order:3;
+    width:100%;
+    flex:1 1 100%;
+    margin:8px 12px 12px 12px;
+    padding:8px 12px;
+    max-width:none;
+    background:rgba(255,255,255,0.08);
+    display:flex;
+    align-items:center;
+    border-radius:40px;
   }
 
-
-  .search-box {
-    order: 3;
-    width: 100%;
-    flex: 1 1 100%;
-    margin: 8px 12px 12px 12px;
-    padding: 8px 12px;
-    max-width: none;
-    background: rgba(255,255,255,0.08);
-    display: flex;
-    align-items: center;
-    border-radius: 40px;
+  .search-box input{
+    font-size:15px;
+    padding:6px 4px;
+    width:100%;
   }
 
-  .search-box input {
-    font-size: 15px;
-    padding: 6px 4px;
-    min-width: 0;
-    width: 100%;
+  .search-icon{
+    font-size:18px;
+    margin-right:8px;
   }
 
-  .search-icon {
-    font-size: 18px;
-    margin-right: 8px;
+  .card-container{
+    grid-template-columns:1fr;
   }
 
-  .card-container {
-    grid-template-columns: 1fr;
+  .card{
+    padding:12px;
   }
 
-  .card {
-    padding: 12px;
+  .tabs{
+    padding:10px 12px;
+    gap:8px;
   }
 
-  .tabs {
-    padding: 10px 12px;
-    gap: 8px;
+  .tab{
+    padding:8px 12px;
+    font-size:13px;
   }
 
-  .tab {
-    padding: 8px 12px;
-    font-size: 13px;
+  .loader{
+    border:6px solid #f3f3f3;
+    border-top:6px solid #092138;
+    border-radius:50%;
+    width:40px;
+    height:40px;
+    animation:spin 1s linear infinite;
+    margin:auto;
   }
 
-  .loader {
-  border: 6px solid #f3f3f3;     
-  border-top: 6px solid #092138;  
-  border-radius: 50%;
-  width: 40px;
-  height: 40px;
-  animation: spin 1s linear infinite;
-  margin: auto;
-}
-
-@keyframes spin {
-  0% {
-    transform: rotate(0deg);
-  }
-  100% {
-    transform: rotate(360deg);
+  @keyframes spin{
+    0%{transform:rotate(0deg);}
+    100%{transform:rotate(360deg);}
   }
 }
 
+#more{
+  color:#2D5FFF;
+  cursor:pointer;
+  text-decoration:none;
+  font-weight:bold;
+}
+
+.time{
+  font-size:13px;
+  color:#555;
+  margin-top:5px;
+}
+
+.timeline-container{
+  width:90%;
+  margin:20px auto;
+  border-left:3px solid #444;
+  padding-left:20px;
+}
+
+.timeline-section{
+  margin-bottom:40px;
+}
+
+.timeline-section-title{
+  font-size:20px;
+  font-weight:bold;
+  margin-bottom:15px;
+  color:#092138;
+}
+
+.timeline-item{
+  position:relative;
+  margin-bottom:25px;
+}
+
+.timeline-dot{
+  width:14px;
+  height:14px;
+  background:#092138;
+  border-radius:50%;
+  position:absolute;
+  left:-28px;
+  top:5px;
+}
+
+.timeline-title{
+  font-size:18px;
+  font-weight:bold;
+  cursor:pointer;
+}
+
+.timeline-time{
+  color:#777;
+  font-size:13px;
+  margin-top:3px;
+}
+
+.timeline-img{
+  margin-top:10px;
+  width:70%;
+  border-radius:8px;
+}
+
+.load-more{
+  background-color:#092138;
+  color:white;
+  padding:10px 18px;
+  border-radius:6px;
+  border:none;
+  font-size:16px;
+  cursor:pointer;
+  transition:0.2s ease;
+}
+
+.load-more:hover{
+  background-color:#0c2b4a;
 }

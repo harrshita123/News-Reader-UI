@@ -71,3 +71,9 @@ Contributors: Harshita Yadav , Manav Nayak
 Update:
 - Do research how to integrate API to our project.
 — Try to  find API which will display in our website .
+
+Date: 29-Nov-2025
+Contributors: Harshita Yadav , Manav Nayak
+Update:
+— Today we implement API to our project .
+— we are trying to complete our home page today.

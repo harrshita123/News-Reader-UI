@@ -64,3 +64,10 @@ Update:
 
 - Add more features in our website .
 -  More research about project.
+
+
+Date: 28-Nov-2025
+Contributors: Harshita Yadav , Manav Nayak
+Update:
+- Do research how to integrate API to our project.
+— Try to  find API which will display in our website .

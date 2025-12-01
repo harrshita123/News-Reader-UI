@@ -93,24 +93,27 @@ const sortTrending = (articles) => {
 };
 
 export default function Home() {
-  const [search, setSearch] = useState("india");
+  const [search, setSearch] = useState("India");
   const [category, setCategory] = useState("All");
   const [newsData, setNewsData] = useState(null);
   const [loading, setLoading] = useState(false);
-  const [visibleCount, setVisibleCount] = useState(4);
+  const [visibleCount, setVisibleCount] = useState(8);
 
-  const API_KEY = "45a6015012dc41d28e608fc57cd13eee";
+  const API_KEY = "8d107bf33a3144cf8e89f70c2b38f6c2";
 
   const getData = async (query = search, cat = category) => {
     setLoading(true);
     try {
       let url = `https://newsapi.org/v2/everything?q=${query}&apiKey=${API_KEY}`;
       if (cat !== "All") url = `https://newsapi.org/v2/everything?q=${query} ${cat}&apiKey=${API_KEY}`;
+
       const response = await fetch(url);
       const jsonData = await response.json();
       let articles = jsonData.articles || [];
+
       if (cat === "All") articles = sortTrending(articles);
       else articles = articles.sort((a, b) => new Date(b.publishedAt) - new Date(a.publishedAt));
+
       setNewsData(articles);
     } catch (error) {
       setNewsData([]);
@@ -132,30 +135,28 @@ export default function Home() {
 
   return (
     <>
-      <div className="home">
-        <header className="navbar">
-          <div className="logo">
-            <img src="src/assets/logo.png" alt="Logo" className="logo-img" />
-            <h1 className="logo-heading">NextRead</h1>
-          </div>
+      <header className="navbar">
+  <div className="left-section">
+    <img src="src/assets/logo.png" alt="Logo" className="logo-img" />
+    <h1 className="logo-heading">NextRead</h1>
+  </div>
 
-          <div className="search-box">
-            <FaSearch size={18} color="white" />
-            <input
-              type="text"
-              placeholder="Search news..."
-              value={search}
-              onKeyDown={(e) => e.key === "Enter" && getData()}
-              onChange={(e) => setSearch(e.target.value)}
-            />
-          </div>
+  <div className="search-box">
+    <FaSearch size={18} color="white" />
+    <input
+      type="text"
+      placeholder="Search news..."
+      value={search}
+      onKeyDown={(e) => e.key === "Enter" && getData()}
+      onChange={(e) => setSearch(e.target.value)}
+    />
+  </div>
 
-          <div className="icons">
-            <FaBookmark size={24} id="bookmark" />
-            <FaUser size={24} id="user" />
-          </div>
-        </header>
-      </div>
+  <div className="icons">
+    <FaBookmark size={24} id="bookmark" />
+    <FaUser size={24} id="user" />
+  </div>
+</header>
 
       <div className="tabs">
         {[
@@ -193,7 +194,6 @@ export default function Home() {
         ) : (
           <>
             <Card data={newsData.slice(0, visibleCount)} />
-
             {visibleCount < newsData.length && (
               <div style={{ textAlign: "center", margin: "20px" }}>
                 <button

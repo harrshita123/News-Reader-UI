@@ -94,7 +94,7 @@ body {
   color: #092138;
 }
 
-/* NAVBAR */
+
 .navbar {
   background: #092138;
   padding: 14px 22px;
@@ -131,9 +131,9 @@ body {
   display: flex;
   align-items: center;
   gap: 10px;
-  width: 40%;
+  width: 60%;
   min-width: 300px;
-  max-width: 520px;
+  max-width: 720px;
   margin: 0 auto;
 }
 
@@ -152,11 +152,12 @@ body {
 
 .icons {
   display: flex;
-  gap: 18px;
+  gap: 36px;
   font-size: 26px;
   align-items: center;
   cursor: pointer;
   flex-shrink: 0;
+  margin-right: 10px;
 }
 
 
@@ -186,7 +187,7 @@ body {
   }
 
   .logo-heading {
-    font-size: 26px;
+    font-size: 30px;
   }
 }
 

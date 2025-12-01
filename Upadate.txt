@@ -83,3 +83,12 @@ Contributors: Harshita Yadav , Manav Nayak
 Update:
 — work on timeline component by using chart.js and API .
 — work on market component by using chart.js and API .
+
+
+
+Date: 01-Dec-2025
+Contributors: Harshita Yadav , Manav Nayak
+Update:
+— Implement logout feature in project.
+— Do changes in UI.
+— Update the logic of search bar.

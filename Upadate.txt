@@ -64,3 +64,31 @@ Update:
 
 - Add more features in our website .
 -  More research about project.
+
+
+Date: 28-Nov-2025
+Contributors: Harshita Yadav , Manav Nayak
+Update:
+- Do research how to integrate API to our project.
+— Try to  find API which will display in our website .
+
+Date: 29-Nov-2025
+Contributors: Harshita Yadav , Manav Nayak
+Update:
+— Today we implement API to our project .
+— we are trying to complete our home page today.
+
+Date: 30-Nov-2025
+Contributors: Harshita Yadav , Manav Nayak
+Update:
+— work on timeline component by using chart.js and API .
+— work on market component by using chart.js and API .
+
+
+
+Date: 01-Dec-2025
+Contributors: Harshita Yadav , Manav Nayak
+Update:
+— Implement logout feature in project.
+— Do changes in UI.
+— Update the logic of search bar.

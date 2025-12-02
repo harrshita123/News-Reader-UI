@@ -103,17 +103,13 @@ export default function Home() {
   const [open, setOpen] = useState(false);
   const navigate = useNavigate();
 
-  const handleLogout = () => {
-    localStorage.removeItem("loggedIn");
-    navigate("/");
-  };
-  const API_KEY = "8d107bf33a3144cf8e89f70c2b38f6c2";
+  const API_KEY = "6b2865b96d6941acb2123af2dcc10a72";
 
   const getData = async (query = search, cat = category) => {
     setLoading(true);
-    setLoading(true);
-    try {
-     if (!query.trim()) query = "india";
+      setLoading(true);
+  try {
+    if (!query.trim()) query = "india";
       let url = `https://newsapi.org/v2/everything?q=${query}&apiKey=${API_KEY}`;
       if (cat !== "All") url = `https://newsapi.org/v2/everything?q=${query} ${cat}&apiKey=${API_KEY}`;
 
@@ -138,8 +134,10 @@ export default function Home() {
 
   const handleCategoryClick = (cat) => {
     setCategory(cat);
+
     setVisibleCount(4);
     getData(search, cat);
+
   };
 
   return (

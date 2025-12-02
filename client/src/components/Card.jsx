@@ -1,4 +1,5 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
+import { FaBookmark, FaRegBookmark } from "react-icons/fa";
 
 const timeAgo = (timeString) => {
   const now = new Date();
@@ -12,6 +13,31 @@ const timeAgo = (timeString) => {
 };
 
 const Card = ({ data }) => {
+  const [bookmarks, setBookmarks] = useState({});
+
+  useEffect(() => {
+    const saved = JSON.parse(localStorage.getItem("bookmarks_v1") || "{}");
+    setBookmarks(saved);
+  }, []);
+
+  const updateStorage = (obj) => {
+    setBookmarks(obj);
+    localStorage.setItem("bookmarks_v1", JSON.stringify(obj));
+  };
+
+  const toggleBookmark = (item) => {
+    const key = item.url;
+    const copy = { ...bookmarks };
+
+    if (copy[key]) {
+      delete copy[key];
+    } else {
+      copy[key] = item;
+    }
+
+    updateStorage(copy);
+  };
+
   if (!data || data.length === 0) {
     return (
       <h2 style={{ textAlign: "center", marginTop: 20 }}>
@@ -25,16 +51,23 @@ const Card = ({ data }) => {
       {data.map((curItem, index) => {
         if (!curItem.urlToImage) return null;
 
+        const fullText =
+          ((curItem.description || "") + " " + (curItem.content || ""))
+            .replace(/\[\+\d+ chars\]/, "")
+            .trim();
+
+        const isSaved = bookmarks[curItem.url];
+
         return (
           <div className="news-card" key={index}>
-            
+
             <div className="news-img">
               <img src={curItem.urlToImage} alt={curItem.title} />
             </div>
 
             <div className="news-content">
 
-              <p 
+              <p
                 className="news-title"
                 onClick={() => window.open(curItem.url, "_blank")}
               >
@@ -43,14 +76,27 @@ const Card = ({ data }) => {
 
               <p className="news-time">{timeAgo(curItem.publishedAt)}</p>
 
-              <p className="news-desc">{curItem.description}</p>
+              <p className="news-desc">{fullText}</p>
 
-              <p 
+              <p
                 className="news-more"
                 onClick={() => window.open(curItem.url, "_blank")}
               >
                 Read More
               </p>
+
+              <div className="bookmark-wrapper">
+                <button
+                  className="bookmark-btn"
+                  onClick={() => toggleBookmark(curItem)}
+                >
+                  {isSaved ? (
+                    <FaBookmark size={22} className="saved-icon" />
+                  ) : (
+                    <FaRegBookmark size={22} className="unsaved-icon" />
+                  )}
+                </button>
+              </div>
 
             </div>
           </div>

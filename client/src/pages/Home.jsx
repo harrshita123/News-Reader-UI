@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from "react";
 import { FaSearch, FaBookmark, FaUser } from "react-icons/fa";
 import Card from "../components/Card.jsx";
+import { useNavigate } from "react-router-dom";
+import { FiLogOut } from "react-icons/fi";
 
 const timeAgo = (timeString) => {
   const now = new Date();
@@ -98,6 +100,8 @@ export default function Home() {
   const [newsData, setNewsData] = useState(null);
   const [loading, setLoading] = useState(false);
   const [visibleCount, setVisibleCount] = useState(8);
+  const [open, setOpen] = useState(false);
+  const navigate = useNavigate();
 
   const API_KEY = "6b2865b96d6941acb2123af2dcc10a72";
 
@@ -156,9 +160,18 @@ export default function Home() {
   </div>
 
   <div className="icons">
-    <FaBookmark size={24} id="bookmark" />
-    <FaUser size={24} id="user" />
+    <FaBookmark size={24} id="bookmark" onClick={() => navigate("/saved")}/>
+    <FaUser size={24} id="user" onClick={() => setOpen(!open)}/>
   </div>
+{open && (
+  <div className="drop">
+    <button onClick={handleLogout} className="logout-btn">
+      <FiLogOut size={18} color="red" style={{ marginRight: "8px" }} />
+      Logout
+    </button>
+  </div>
+)}
+
 </header>
 
       <div className="tabs">

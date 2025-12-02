@@ -95,7 +95,7 @@ const sortTrending = (articles) => {
 };
 
 export default function Home() {
-  const [search, setSearch] = useState("India");
+  const [search, setSearch] = useState("");
   const [category, setCategory] = useState("All");
   const [newsData, setNewsData] = useState(null);
   const [loading, setLoading] = useState(false);
@@ -111,7 +111,9 @@ export default function Home() {
 
   const getData = async (query = search, cat = category) => {
     setLoading(true);
+    setLoading(true);
     try {
+     if (!query.trim()) query = "india";
       let url = `https://newsapi.org/v2/everything?q=${query}&apiKey=${API_KEY}`;
       if (cat !== "All") url = `https://newsapi.org/v2/everything?q=${query} ${cat}&apiKey=${API_KEY}`;
 
@@ -136,9 +138,8 @@ export default function Home() {
 
   const handleCategoryClick = (cat) => {
     setCategory(cat);
-    setSearch(cat === "All" ? "india" : cat);
     setVisibleCount(4);
-    getData(cat === "All" ? "india" : cat, cat);
+    getData(search, cat);
   };
 
   return (
@@ -161,7 +162,7 @@ export default function Home() {
   </div>
 
   <div className="icons">
-    <FaBookmark size={24} id="bookmark" />
+    <FaBookmark size={24} id="bookmark" onClick={() => navigate("/saved")}/>
     <FaUser size={24} id="user" onClick={() => setOpen(!open)}/>
   </div>
 {open && (

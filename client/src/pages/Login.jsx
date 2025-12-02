@@ -13,12 +13,21 @@ export default function Login() {
         email: email,
         password: password
       })
-      .then(result => {console.log(result) 
-        if(result.data === "Successfully Logged in"){  
-          navigate('/home')
-        }
-      })
-      .catch(err => console.log(err));
+      .then(result => {
+  const message = result.data;
+
+  if (message === "Successfully Logged in") {
+    alert("Login Successful!");
+    navigate('/home');
+  } 
+  else if (message === "User not found") {
+    alert("User not found");
+  }
+  else if (message === "Incorrect Email or Password") {
+    alert("Incorrect Email or Password");
+  }
+})
+.catch(err => console.log(err));
     }
     return (
       <>

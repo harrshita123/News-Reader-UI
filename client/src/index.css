@@ -28,6 +28,7 @@ body {
   display: block;
   margin-left: auto;
   margin-right: auto;
+  border-radius: 10px;
 }
 
 #log {
@@ -130,9 +131,9 @@ body {
   display: flex;
   align-items: center;
   gap: 10px;
-  width: 40%;
+  width: 60%;
   min-width: 300px;
-  max-width: 520px;
+  max-width: 720px;
   margin: 0 auto;
 }
 
@@ -151,13 +152,17 @@ body {
 
 .icons {
   display: flex;
-  gap: 18px;
+  gap: 36px;
   font-size: 26px;
   align-items: center;
   cursor: pointer;
   flex-shrink: 0;
+  margin-right: 10px;
 }
 
+#bookmark:hover, #user:hover {
+  opacity: 0.8;
+}
 
 @media (max-width: 768px) {
   .navbar {
@@ -185,7 +190,7 @@ body {
   }
 
   .logo-heading {
-    font-size: 26px;
+    font-size: 30px;
   }
 }
 
@@ -234,7 +239,6 @@ body {
 .news-card {
   width: 100%;
   max-width: 750px;
-  aspect-ratio: 4 / 3;
   background: white;
   border-radius: 16px;
   overflow: hidden;
@@ -244,6 +248,7 @@ body {
   transition: 0.2s ease;
 }
 
+
 .news-card:hover {
   transform: translateY(-4px);
   box-shadow: 0 8px 18px rgba(0,0,0,0.12);
@@ -251,7 +256,7 @@ body {
 
 .news-img {
   width: 100%;
-  height: 58%;
+  aspect-ratio: 16 / 9;   
   overflow: hidden;
 }
 
@@ -260,6 +265,14 @@ body {
   height: 100%;
   object-fit: cover;
 }
+
+@media (max-width: 600px) {
+  .news-img {
+    aspect-ratio: 4 / 3;  
+  }
+}
+
+
 
 .news-content {
   padding: 12px 14px;
@@ -288,18 +301,20 @@ body {
 }
 
 .news-desc {
-  font-size: 14px;
-  color: #3f3f3f;
-  margin-top: 6px;
-  overflow: hidden;
   display: -webkit-box;
-  -webkit-line-clamp: 6;
-  line-clamp: 6;
+  line-clamp: 8;  
   -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  min-height: 12px;       
+  margin: 8px 0;
+  color: #444;
+  line-height: 1.4;
 }
 
+
 .news-more {
-  font-size: 14px;
+  font-size: 16px;
   color: #2D5FFF;
   font-weight: 600;
   margin-top: auto;
@@ -371,7 +386,7 @@ body {
 
 .drop {
   position: absolute;
-  top: 35px;
+  top: 55px;  
   right: 0;
   background: white;
   border: 1px solid #ddd;
@@ -394,3 +409,55 @@ body {
 .drop button:hover {
   background: #f5f5f5;
 }
+
+.news-card {
+  position: relative; 
+}
+
+.bookmark-wrapper {
+  position: absolute;
+  bottom: 12px;
+  right: 12px;
+}
+
+.bookmark-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 4px;
+}
+
+.saved-icon {
+  color: #2D5FFF; 
+}
+
+.saved-topbar {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 20px;
+}
+
+.back {
+  cursor: pointer;
+  color: #092138;
+  transition: 0.2s ease;
+}
+
+.back:hover {
+  color: #0b2b4d;
+}
+
+.saved-title {
+  font-size: 22px;
+  font-weight: 700;
+  color: #092138;
+}
+
+
+@media (max-width: 600px) {
+  .back {
+    size: 26px;
+  }
+}
+

@@ -23,7 +23,6 @@ export default function Saved() {
   return (
     <div className="saved-container">
 
-      {/* ⭐ Always show top bar */}
       <div className="saved-topbar">
         <FaArrowLeft
           className="back"
@@ -33,7 +32,6 @@ export default function Saved() {
         <h1 className="saved-title">Saved Articles</h1>
       </div>
 
-      {/* If no saved articles */}
       {articles.length === 0 ? (
         <h2 style={{ textAlign: "center", marginTop: 20 }}>
           No saved articles.

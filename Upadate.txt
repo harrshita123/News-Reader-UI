@@ -92,3 +92,11 @@ Update:
 — Implement logout feature in project.
 — Do changes in UI.
 — Update the logic of search bar.
+
+Date: 02-Dec-2025
+Contributors: Harshita Yadav , Manav Nayak
+Update:
+— Do remainning work .
+— Implement new features.
+— when user point thier cursor on image then original link then pop shown of original website.
+— Learn about JWT.

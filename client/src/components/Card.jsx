@@ -1,6 +1,16 @@
 import React, { useEffect, useState } from "react";
 import { FaBookmark, FaRegBookmark } from "react-icons/fa";
 
+
+const extractDomain = (url) => {
+  try {
+    return new URL(url).hostname.replace("www.", "");
+  } catch {
+    return "";
+  }
+};
+
+
 const timeAgo = (timeString) => {
   const now = new Date();
   const past = new Date(timeString);
@@ -61,9 +71,18 @@ const Card = ({ data }) => {
         return (
           <div className="news-card" key={index}>
 
-            <div className="news-img">
-              <img src={curItem.urlToImage} alt={curItem.title} />
-            </div>
+<div className="news-img">
+  <img src={curItem.urlToImage} alt={curItem.title} />
+  <a 
+    href={curItem.url} 
+    target="_blank" 
+    rel="noopener noreferrer" 
+    className="img-hover-overlay"
+  >
+    {extractDomain(curItem.url)}
+  </a>
+</div>
+
 
             <div className="news-content">
 

@@ -1,8 +1,11 @@
 import React, { useEffect, useState } from "react";
 import { FaSearch, FaBookmark, FaUser } from "react-icons/fa";
-import Card from "../components/Card.jsx";
-import { useNavigate } from "react-router-dom";
 import { FiLogOut } from "react-icons/fi";
+import Card from "../components/Card.jsx";
+import axios from "axios";
+import { useNavigate } from "react-router-dom";
+
+axios.defaults.withCredentials = true;
 
 const timeAgo = (timeString) => {
   const now = new Date();
@@ -10,8 +13,7 @@ const timeAgo = (timeString) => {
   const diff = Math.floor((now - past) / 1000);
   if (diff < 60) return "Just now";
   if (diff < 3600) return Math.floor(diff / 60) + " mins ago";
-  if (diff < 86400) return Math.floor(diff / 3600) + " hours ago";
-  return Math.floor(diff / 86400) + " days ago";
+  return Math.floor(diff / 3600) + " hours ago";
 };
 
 const Timeline = ({ data }) => {
@@ -20,10 +22,6 @@ const Timeline = ({ data }) => {
     const diffHours = (now - new Date(item.publishedAt)) / 3600000;
     return diffHours <= 72;
   });
-
-  if (recent.length === 0) {
-    return <h2 style={{ textAlign: "center", marginTop: "20px" }}>No news in the last 72 hours.</h2>;
-  }
 
   const groups = {
     "Last 1 hour": [],
@@ -36,17 +34,17 @@ const Timeline = ({ data }) => {
   };
 
   recent.forEach((item) => {
-    const diffHours = (now - new Date(item.publishedAt)) / 3600000;
-    if (diffHours <= 1) groups["Last 1 hour"].push(item);
-    else if (diffHours <= 3) groups["Last 3 hours"].push(item);
-    else if (diffHours <= 6) groups["Last 6 hours"].push(item);
-    else if (diffHours <= 12) groups["Last 12 hours"].push(item);
-    else if (diffHours <= 24) groups["Last 24 hours"].push(item);
-    else if (diffHours <= 48) groups["Last 48 hours"].push(item);
+    const diff = (now - new Date(item.publishedAt)) / 3600000;
+    if (diff <= 1) groups["Last 1 hour"].push(item);
+    else if (diff <= 3) groups["Last 3 hours"].push(item);
+    else if (diff <= 6) groups["Last 6 hours"].push(item);
+    else if (diff <= 12) groups["Last 12 hours"].push(item);
+    else if (diff <= 24) groups["Last 24 hours"].push(item);
+    else if (diff <= 48) groups["Last 48 hours"].push(item);
     else groups["Last 72 hours"].push(item);
   });
 
-  const sectionOrder = [
+  const sections = [
     "Last 1 hour",
     "Last 3 hours",
     "Last 6 hours",
@@ -58,19 +56,24 @@ const Timeline = ({ data }) => {
 
   return (
     <div className="timeline-container">
-      {sectionOrder.map((section) =>
-        groups[section].length > 0 ? (
-          <div key={section} className="timeline-section">
-            <h2 className="timeline-section-title">{section}</h2>
-            {groups[section].map((item, index) => (
-              <div className="timeline-item" key={index}>
+      {sections.map((sec) =>
+        groups[sec].length > 0 ? (
+          <div key={sec} className="timeline-section">
+            <h2 className="timeline-section-title">{sec}</h2>
+            {groups[sec].map((item, idx) => (
+              <div className="timeline-item" key={idx}>
                 <div className="timeline-dot"></div>
                 <div className="timeline-content">
-                  <h3 className="timeline-title" onClick={() => window.open(item.url, "_blank")}>
+                  <h3
+                    className="timeline-title"
+                    onClick={() => window.open(item.url, "_blank")}
+                  >
                     {item.title}
                   </h3>
                   <p className="timeline-time">{timeAgo(item.publishedAt)}</p>
-                  {item.urlToImage && <img src={item.urlToImage} alt="" className="timeline-img" />}
+                  {item.urlToImage && (
+                    <img src={item.urlToImage} alt="" className="timeline-img" />
+                  )}
                 </div>
               </div>
             ))}
@@ -81,47 +84,111 @@ const Timeline = ({ data }) => {
   );
 };
 
-const sortTrending = (articles) => {
-  return articles
+const sortTrending = (articles) =>
+  articles
     .filter((a) => a.urlToImage)
-    .map((a) => ({
-      ...a,
-      popularityScore:
-        (a.title?.length || 0) +
-        (a.description?.length || 0) +
-        (a.content?.length || 0),
-    }))
     .sort((a, b) => new Date(b.publishedAt) - new Date(a.publishedAt));
-};
 
 export default function Home() {
   const [search, setSearch] = useState("");
   const [category, setCategory] = useState("All");
-  const [newsData, setNewsData] = useState(null);
+  const [newsData, setNewsData] = useState([]);
   const [loading, setLoading] = useState(false);
   const [visibleCount, setVisibleCount] = useState(8);
   const [open, setOpen] = useState(false);
-  const navigate = useNavigate();
 
-  const API_KEY = "6b2865b96d6941acb2123af2dcc10a72";
+  const navigate = useNavigate();
+  const API_KEY = "8d107bf33a3144cf8e89f70c2b38f6c2";
+
+  const MAIN_CATEGORIES = [
+    "Technology",
+    "Sports",
+    "Business",
+    "Entertainment",
+    "Health",
+    "Science",
+  ];
+
+  useEffect(() => {
+    axios
+      .get("http://localhost:3001/me")
+      .then((res) => {
+        if (!res.data?.email) navigate("/");
+      })
+      .catch(() => navigate("/"));
+  }, []);
+
+  const handleLogout = () => {
+    axios.post("http://localhost:3001/logout").then(() => navigate("/"));
+  };
 
   const getData = async (query = search, cat = category) => {
     setLoading(true);
-      setLoading(true);
-  try {
-    if (!query.trim()) query = "india";
-      let url = `https://newsapi.org/v2/everything?q=${query}&apiKey=${API_KEY}`;
-      if (cat !== "All") url = `https://newsapi.org/v2/everything?q=${query} ${cat}&apiKey=${API_KEY}`;
+    try {
+      let url = "";
+      let json = {};
 
-      const response = await fetch(url);
-      const jsonData = await response.json();
-      let articles = jsonData.articles || [];
+      if (MAIN_CATEGORIES.includes(cat)) {
+        url = `https://newsapi.org/v2/top-headlines?category=${cat.toLowerCase()}&language=en&apiKey=${API_KEY}`;
+        let res = await fetch(url);
+        json = await res.json();
 
-      if (cat === "All") articles = sortTrending(articles);
-      else articles = articles.sort((a, b) => new Date(b.publishedAt) - new Date(a.publishedAt));
+        if (!json.articles?.length) {
+          url = `https://newsapi.org/v2/everything?q=${cat}&language=en&sortBy=publishedAt&apiKey=${API_KEY}`;
+          res = await fetch(url);
+          json = await res.json();
+        }
 
-      setNewsData(articles);
-    } catch (error) {
+        setNewsData(json.articles || []);
+        return;
+      }
+
+      if (cat === "Startups") {
+        const q =
+          "startup OR funding OR venture OR raised OR investor OR incubator OR founders OR unicorn";
+        url = `https://newsapi.org/v2/everything?q=${encodeURIComponent(
+          q
+        )}&language=en&sortBy=publishedAt&apiKey=${API_KEY}`;
+        const res = await fetch(url);
+        json = await res.json();
+        setNewsData(json.articles || []);
+        return;
+      }
+
+      if (cat === "Markets") {
+        const q =
+          "market OR stock OR index OR nifty OR sensex OR NSE OR BSE OR inflation OR finance OR rupee OR economy";
+        url = `https://newsapi.org/v2/everything?q=${encodeURIComponent(
+          q
+        )}&language=en&sortBy=publishedAt&apiKey=${API_KEY}`;
+        const res = await fetch(url);
+        json = await res.json();
+        setNewsData(json.articles || []);
+        return;
+      }
+
+      if (cat === "Timeline") {
+        const q = "breaking OR latest OR update OR news";
+        url = `https://newsapi.org/v2/everything?q=${encodeURIComponent(
+          q
+        )}&language=en&sortBy=publishedAt&pageSize=100&apiKey=${API_KEY}`;
+        const res = await fetch(url);
+        json = await res.json();
+        setNewsData(json.articles || []);
+        return;
+      }
+
+      const q = query.trim() ? query : "latest";
+      url = `https://newsapi.org/v2/everything?q=${encodeURIComponent(
+        q
+      )}&language=en&sortBy=publishedAt&pageSize=100&apiKey=${API_KEY}`;
+      const res = await fetch(url);
+      json = await res.json();
+
+      const sorted = sortTrending(json.articles || []);
+      setNewsData(sorted);
+    } catch (e) {
+      console.log(e);
       setNewsData([]);
     } finally {
       setLoading(false);
@@ -134,45 +201,43 @@ export default function Home() {
 
   const handleCategoryClick = (cat) => {
     setCategory(cat);
-
     setVisibleCount(4);
     getData(search, cat);
-
   };
 
   return (
     <>
       <header className="navbar">
-  <div className="left-section">
-    <img src="src/assets/logo.png" alt="Logo" className="logo-img" />
-    <h1 className="logo-heading">NextRead</h1>
-  </div>
+        <div className="left-section">
+          <img src="src/assets/logo.png" alt="Logo" className="logo-img" />
+          <h1 className="logo-heading">NextRead</h1>
+        </div>
 
-  <div className="search-box">
-    <FaSearch size={18} color="white" />
-    <input
-      type="text"
-      placeholder="Search news..."
-      value={search}
-      onKeyDown={(e) => e.key === "Enter" && getData()}
-      onChange={(e) => setSearch(e.target.value)}
-    />
-  </div>
+        <div className="search-box">
+          <FaSearch size={18} color="white" />
+          <input
+            type="text"
+            placeholder="Search news..."
+            value={search}
+            onKeyDown={(e) => e.key === "Enter" && getData()}
+            onChange={(e) => setSearch(e.target.value)}
+          />
+        </div>
 
-  <div className="icons">
-    <FaBookmark size={24} id="bookmark" onClick={() => navigate("/saved")}/>
-    <FaUser size={24} id="user" onClick={() => setOpen(!open)}/>
-  </div>
-{open && (
-  <div className="drop">
-    <button onClick={handleLogout} className="logout-btn">
-      <FiLogOut size={18} color="red" style={{ marginRight: "8px" }} />
-      Logout
-    </button>
-  </div>
-)}
+        <div className="icons">
+          <FaBookmark size={24} id="bookmark" onClick={() => navigate("/saved")} />
+          <FaUser size={24} id="user" onClick={() => setOpen(!open)} />
+        </div>
 
-</header>
+        {open && (
+          <div className="drop">
+            <button onClick={handleLogout} className="logout-btn">
+              <FiLogOut size={18} color="red" style={{ marginRight: "8px" }} />
+              Logout
+            </button>
+          </div>
+        )}
+      </header>
 
       <div className="tabs">
         {[
@@ -189,8 +254,8 @@ export default function Home() {
         ].map((cat) => (
           <button
             key={cat}
-            onClick={() => handleCategoryClick(cat)}
             className={`tab ${category === cat ? "active" : ""}`}
+            onClick={() => handleCategoryClick(cat)}
           >
             {cat}
           </button>

@@ -1,3 +1,4 @@
+```
 NextRead – Full Stack MERN Application
 
 NextRead is a complete MERN (MongoDB, Express, React, Node.js) application featuring secure user authentication, protected API routes, and a responsive frontend interface. The platform enables users to register, log in, and access personalized content through JWT-based authentication using HTTP-only cookies.
@@ -138,3 +139,4 @@ Contributing:-
 -> License
 
 This project is released under the MIT License.
+```

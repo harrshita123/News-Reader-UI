@@ -1,16 +1,168 @@
-# React + Vite
+NextRead – Full Stack MERN Application
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+NextRead is a complete MERN (MongoDB, Express, React, Node.js) application featuring secure user authentication, protected API routes, and a responsive frontend interface. The platform enables users to register, log in, and access personalized content through JWT-based authentication using HTTP-only cookies.
 
-Currently, two official plugins are available:
+Features
+Authentication
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+User registration
 
-## React Compiler
+Secure login with password hashing
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+JWT-based authentication
 
-## Expanding the ESLint configuration
+HTTP-only cookie storage
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+Protected user route (/me)
+
+Frontend
+
+React with Vite
+
+Modular and reusable components
+
+Search and filtering functionality
+
+Responsive user interface
+
+Backend
+
+Node.js with Express
+
+MongoDB integration via Mongoose
+
+Password hashing using bcrypt
+
+Secure cookie management
+
+Middleware-based route protection
+
+Tech Stack
+Frontend
+
+React
+
+Vite
+
+Axios
+
+CSS / Tailwind (if used)
+
+React Icons
+
+Backend
+
+Node.js
+
+Express
+
+Mongoose
+
+JWT
+
+bcrypt
+
+cookie-parser
+
+CORS
+
+Database
+
+MongoDB (local or MongoDB Atlas)
+
+Project Structure
+NextRead/
+│
+├── backend/
+│   ├── models/
+│   │   └── user.js
+│   ├── server.js
+│   ├── package.json
+│
+└── frontend/
+    ├── src/
+    │   ├── components/
+    │   ├── pages/
+    │   ├── App.jsx
+    └── package.json
+
+Backend Setup
+Install Dependencies
+cd backend
+npm install
+
+Environment Variables
+
+Create a .env file inside the backend directory:
+
+MONGO_URI=your-mongodb-connection-uri
+JWT_SECRET=your-secret-key
+
+Start Backend Server
+npm start
+
+
+Backend will be available at:
+
+http://localhost:3001
+
+Frontend Setup
+Install Dependencies
+cd frontend
+npm install
+
+Start Frontend
+npm run dev
+
+
+Frontend will run on:
+
+http://localhost:5173
+
+API Endpoints
+Authentication Routes
+Method	Route	Description
+POST	/register	Register a new user
+POST	/login	Log in and receive JWT cookie
+GET	/me	Retrieve authenticated user information
+POST	/logout	Log out and clear authentication cookie
+Deployment Guide
+Frontend (Vercel or Netlify)
+
+Generate the production build:
+
+npm run build
+
+
+Deploy the dist/ folder.
+
+Backend (Render or Railway)
+
+Add environment variables:
+
+MONGO_URI=your-mongo-uri
+JWT_SECRET=your-secret
+
+
+Use the following start command:
+
+node server.js
+
+
+Update CORS settings to include the deployed frontend domain:
+
+origin: "https://your-frontend-domain.com"
+
+Contributing
+
+Fork the repository
+
+Create a new branch for your feature or fix
+
+Commit changes with clear messages
+
+Open a pull request
+
+License
+
+This project is released under the MIT License.

@@ -105,5 +105,21 @@ Update:
 Date: 03-Dec-2025
 Contributors: Harshita Yadav , Manav Nayak
 Update:
-Implement new feature of folder in bookmark .
-Implement JWT feature .
+- Implement new feature of folder in bookmark .
+- Implement JWT feature .
+
+
+Date: 04-Dec-2025
+Contributors: Harshita Yadav , Manav Nayak
+Update:
+- Test the project to ensure everything is functioning correctly.
+- Deploy the project to a live hosting platform.
+- Provide the live deployment link.
+- Create a professional PowerPoint presentation for the project.
+- Update the README file with clear, well-structured, and professional documentation.
+
+
+Date: 05-Dec-2025
+Contributors: Harshita Yadav , Manav Nayak
+Update:
+Implement initial marketing strategies to promote the website, including sharing on social platforms, optimizing content for visibility, and presenting the website to potential users.

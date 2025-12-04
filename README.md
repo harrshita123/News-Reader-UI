@@ -2,73 +2,57 @@ NextRead – Full Stack MERN Application
 
 NextRead is a complete MERN (MongoDB, Express, React, Node.js) application featuring secure user authentication, protected API routes, and a responsive frontend interface. The platform enables users to register, log in, and access personalized content through JWT-based authentication using HTTP-only cookies.
 
-Features
-Authentication
+Features :
 
-User registration
+Authentication :-
 
-Secure login with password hashing
+-> User registration
+-> Secure login with password hashing
+-> JWT-based authentication
+-> HTTP-only cookie storage
+-> Protected user route (/me)
 
-JWT-based authentication
 
-HTTP-only cookie storage
+Frontend :- 
 
-Protected user route (/me)
+-> React with Vite
+-> Modular and reusable components
+-> Search and filtering functionality
+-> Responsive user interface
 
-Frontend
+Backend :-
 
-React with Vite
+-> Node.js with Express
+-> MongoDB integration via Mongoose
+-> Password hashing using bcrypt
+->  Secure cookie management
+-> Middleware-based route protection 
 
-Modular and reusable components
+Tech Stack:
 
-Search and filtering functionality
+Frontend :-
 
-Responsive user interface
+-> React
+-> Vite
+-> Axios
+-> CSS 
+-> React Icons
 
-Backend
 
-Node.js with Express
+Backend :-
 
-MongoDB integration via Mongoose
+-> Node.js
+-> Express
+-> Mongoose
+-> JWT
+-> bcrypt
+-> cookie-parser
+-> CORS
 
-Password hashing using bcrypt
 
-Secure cookie management
+Database :-
 
-Middleware-based route protection
-
-Tech Stack
-Frontend
-
-React
-
-Vite
-
-Axios
-
-CSS / Tailwind (if used)
-
-React Icons
-
-Backend
-
-Node.js
-
-Express
-
-Mongoose
-
-JWT
-
-bcrypt
-
-cookie-parser
-
-CORS
-
-Database
-
-MongoDB (local or MongoDB Atlas)
+-> MongoDB (local or MongoDB Atlas)
 
 Project Structure
 NextRead/
@@ -86,40 +70,39 @@ NextRead/
     │   ├── App.jsx
     └── package.json
 
-Backend Setup
-Install Dependencies
+Backend Setup :
+
+Install Dependencies :-
 cd backend
 npm install
 
-Environment Variables
+Environment Variables :-
 
 Create a .env file inside the backend directory:
-
 MONGO_URI=your-mongodb-connection-uri
 JWT_SECRET=your-secret-key
 
-Start Backend Server
+Start Backend Server :-
 npm start
 
 
 Backend will be available at:
-
 http://localhost:3001
 
-Frontend Setup
-Install Dependencies
+Frontend Setup:
+
+Install Dependencies :-
 cd frontend
 npm install
 
-Start Frontend
+Start Frontend :-
 npm run dev
 
 
 Frontend will run on:
-
 http://localhost:5173
 
-API Endpoints
+API Endpoints :-
 Authentication Routes
 Method	Route	Description
 POST	/register	Register a new user
@@ -129,40 +112,29 @@ POST	/logout	Log out and clear authentication cookie
 Deployment Guide
 Frontend (Vercel or Netlify)
 
-Generate the production build:
 
+Generate the production build:-
 npm run build
 
 
-Deploy the dist/ folder.
+Deploy the dist/ folder:-
 
-Backend (Render or Railway)
-
-Add environment variables:
-
-MONGO_URI=your-mongo-uri
-JWT_SECRET=your-secret
+->Backend (Render or Railway)
 
 
 Use the following start command:
-
 node server.js
 
 
 Update CORS settings to include the deployed frontend domain:
-
 origin: "https://your-frontend-domain.com"
 
-Contributing
+Contributing:-
 
-Fork the repository
-
-Create a new branch for your feature or fix
-
-Commit changes with clear messages
-
-Open a pull request
-
-License
+-> Fork the repository
+-> Create a new branch for your feature or fix
+-> Commit changes with clear messages
+-> Open a pull request
+-> License
 
 This project is released under the MIT License.

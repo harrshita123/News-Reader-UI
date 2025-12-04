@@ -100,3 +100,10 @@ Update:
 — Implement new features.
 — when user point thier cursor on image then original link then pop shown of original website.
 — Learn about JWT.
+
+
+Date: 03-Dec-2025
+Contributors: Harshita Yadav , Manav Nayak
+Update:
+Implement new feature of folder in bookmark .
+Implement JWT feature .

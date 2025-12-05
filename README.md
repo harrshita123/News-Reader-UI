@@ -57,19 +57,39 @@ Database :-
 
 Project Structure
 NextRead/
-│
-├── backend/
-│   ├── models/
-│   │   └── user.js
-│   ├── server.js
+├── client/
+│   ├── src/
+│   │   ├── assets/
+│   │   │   └── logo.png
+│   │   ├── components/
+│   │   │   ├── Card.jsx
+│   │   │   └── header.jsx
+│   │   ├── pages/
+│   │   │   ├── Home.jsx
+│   │   │   ├── Login.jsx
+│   │   │   ├── Saved.jsx
+│   │   │   └── Signup.jsx
+│   │   ├── App.css
+│   │   ├── App.jsx
+│   │   ├── index.css
+│   │   ├── main.jsx
+│   │   └── index.html
 │   ├── package.json
+│   ├── package-lock.json
+│   ├── vite.config.js
+│   └── node_modules/
 │
-└── frontend/
-    ├── src/
-    │   ├── components/
-    │   ├── pages/
-    │   ├── App.jsx
-    └── package.json
+├── server/
+│   ├── models/
+│   │   └── User.js
+│   ├── node_modules/
+│   ├── index.js
+│   ├── package.json
+│   └── package-lock.json
+│
+├── LICENSE
+├── README.md
+└── Update.txt
 
 Backend Setup :
 
